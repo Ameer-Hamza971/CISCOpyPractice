@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ourStyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery.lettering.js"></script>
+    <script src="jquery.textillate.js"></script>
+    <script src="jqueryRipple.js"></script>
+
+</head>
+
+<body class="wave-box">
+    <!---------------Navbar--------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse Clbutton" id="navbarTogglerDemo03" onclick="hide('options')">
+
+            <h3>START</h3>
+            <!-- <h3>START</h3> -->
+        </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <h1 class="tlt">RADIANT WAY SCHOOL SYSTEM</h1>
+
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse Clbutton" id="navbarTogglerDemo03">
+            <h3>QUIZES</h3>
+        </div>
+    </nav>
+    <ul class="options" id="options">
+        <a href="pages/mathematics/selectionPage.html">
+            <li>MATHEMATICS</li>
+        </a>
+        <a href="">
+            <li>SCIENCE</li>
+        </a>
+        <a href="">
+            <li>ENGLISH</li>
+        </a>
+        <a href="">
+            <li>GENERAL KNOWLEDGE</li>
+        </a>
+    </ul>
+    <div class="main-headings wave-box">
+        <h2 class="tlt2 wave-box">A NEW WAY</h2>
+        <h3 class="tlt2 wave-box">TO TEST YOUR BRAIN</h3>
+        <h2 class="last-one tlt2 wave-box">POWER</h2>
+    </div>
+    <script>
+        $('.tlt').textillate({ in: {
+                effect: 'bounceInUp',
+                delay: 100,
+                shuffle: true
+            },
+            out: {
+                effect: 'hinge',
+                delay: 100,
+                shuffle: true
+            },
+            loop: true
+        });
+        $('.tlt2').textillate({ in: {
+                effect: 'fadeInLeftBig',
+                delay: 200,
+                sequence: true
+            },
+            out: {
+                effect: 'fadeOutRightBig',
+                delay: 100,
+                sequence: true
+            },
+            initialDelay: 200,
+            loop: true
+        });
+    </script>
+    <script>
+        function hide(theId) {
+            document.getElementById(theId).style.visibility += "visible";
+        }
+        $(document).ready(function() {
+
+            $(".wave-box").ripple({
+
+                width: 500,
+
+                height: 500,
+                color: "rgba(100, 252, 242, 0.2)",
+                event: "click",
+                duration: 2000
+
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

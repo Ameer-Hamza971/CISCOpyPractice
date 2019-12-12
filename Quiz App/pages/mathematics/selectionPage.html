@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selection Page</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #060c21;
+            font-family: arial;
+            overflow: hidden;
+        }
+        
+        #ThisBody {
+            transition: 5s;
+        }
+        
+        .container {
+            position: relative;
+            width: 905;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-rows: auto;
+            grid-gap: 0 40px;
+        }
+        
+        .container .box {
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border: none;
+            text-decoration: none;
+            /* transition: 1s; */
+            animation: waterWave 15s linear infinite;
+        }
+        /*         
+        .container .box:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #fff;
+            z-index: -1;
+            transform: skew(2deg, 2deg);
+            background: linear-gradient(315deg, rgb(53, 194, 250), rgb(185, 247, 43));
+        } */
+        
+        .content {
+            position: relative;
+            padding: 20px;
+        }
+        
+        .content h2 {
+            position: absolute;
+            top: -60px;
+            right: 20px;
+            margin: 0;
+            padding: 0;
+            font-size: 10em;
+            color: rgba(255, 255, 255, 0.05);
+            transition: 0.5s;
+        }
+        
+        .box:hover .content h2 {
+            top: -140px;
+            color: white;
+            animation-name: water;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: -1s;
+        }
+        
+        .box .content h3 {
+            margin: 0 0 10px;
+            padding: 0;
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            transition: ease-in 0.3s;
+        }
+        /* .box:hover .content h3 {
+            border-bottom: 2px solid lawngreen;
+        } */
+        
+        .box .content p {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 16px;
+            transition: .5s;
+        }
+        
+        .box:hover .content p {
+            animation-name: water;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: none;
+            /* color: #060c21; */
+            /* visibility: hidden; */
+            /* font-size: 0px; */
+        }
+        
+        a {
+            text-decoration: none;
+            transition: 2s;
+        }
+        
+        #box1 {
+            transition: 5s;
+            animation: 9s linear -.1s waterWave infinite;
+        }
+        
+        #box2 {
+            transition: 5s;
+            animation: 9.5s linear -.1s waterWave infinite;
+        }
+        
+        #box3 {
+            transition: 5s;
+            animation: 10s linear -.1s waterWave infinite;
+        }
+        
+        @keyframes water {
+            0% {
+                transform: skewX(5deg);
+            }
+            25% {
+                transform: skewX(-15deg);
+                color: lawngreen;
+                border-bottom: 10%nh6b584;
+            }
+            50% {
+                transform: skewX(20deg);
+                color: white;
+            }
+            100% {
+                transform: skewX(-10deg);
+                color: rgb(53, 194, 250);
+            }
+        }
+        
+        @keyframes waterWave {
+            0% {
+                top: 22px;
+                transform: skewX(5deg);
+            }
+            25% {
+                top: -22px;
+                transform: skewX(-15deg);
+                color: lawngreen;
+                border-bottom: 10%nh6b584;
+            }
+            50% {
+                top: 32px;
+                transform: skewX(20deg);
+                color: white;
+            }
+            75% {
+                top: -32px;
+                transform: skewX(-10deg);
+                color: rgb(53, 194, 250);
+            }
+            100% {
+                top: 0px;
+                transform: skewX(-10deg);
+                color: rgb(53, 194, 250);
+            }
+        }
+    </style>
+</head>
+
+<body id="ThisBody" class="ThisBody">
+    <div class="container">
+        <a href="pages/4th/Class4th.html">
+            <div class="box" id="box1" onmouseover="changeBg('ThisBody', 'linear-gradient(to right, rgb(20, 136, 204), rgb(43, 50, 178))');" onmouseout="prevBg('ThisBody');">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Beginner's Level</h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="pages/4th/intermediate.html">
+            <div class="box" id="box2" onmouseover="changeBg('ThisBody', 'linear-gradient(to right, rgb(100, 43, 115), rgb(198, 66, 110))');" onmouseout="prevBg('ThisBody');">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Intermediate Level</h3>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+        </a>
+        <div class="box" id="box3" onmouseover="changeBg('ThisBody', 'linear-gradient(to right, rgb(0, 0, 70), rgb(28, 181, 224))');" onmouseout="prevBg('ThisBody');">
+            <div class="content">
+                <h2>03</h2>
+                <h3>Advance Level</h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeBg(theId, colur) {
+            document.getElementById('ThisBody').style.transition = "all 2s";
+            document.getElementById(theId).style.backgroundImage = colur;
+            // document.getElementById(Id3).style.backgroundImage = colur;
+            // document.getElementsByClassName(theClass).style.backgroundImage = colur;
+        }
+
+        function prevBg(theId) {
+            document.getElementById(theId).style.background = "#060c21";
+            document.getElementById(theId).style.transition = "2s";
+        }
+
+        function hideElement(id1, id2) {
+            document.getElementById(id1).style.visibility = "hidden";
+            document.getElementById(id2).style.visibility = "hidden";
+        }
+
+        function visibleElement(id1, id2) {
+            document.getElementById(id1).style.visibility = "visible";
+            document.getElementById(id2).style.visibility = "visible";
+        }
+    </script>
+
+</body>
+
+</html>

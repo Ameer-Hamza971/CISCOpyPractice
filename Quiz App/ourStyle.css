@@ -1,0 +1,131 @@
+body {
+    padding: 0;
+    margin: 0;
+    /* background-image: #0B0C10; */
+    background-image: /*linear-gradient(rgba(rgb(), rgba(11, 12, 16, .5), rgba())),*/
+    linear-gradient(to bottom, rgba(11, 12, 16, 0), rgba(11, 12, 16, 1)), url("asphalt-dark-dawn-endless-531321.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+/* -------------------Navbar Style---------------------- */
+
+nav.navbar {
+    width: 100%;
+    margin: 0px;
+    padding-top: 30px;
+    background: transparent!important;
+}
+
+ul.navbar-nav {
+    margin: 0 auto 0 auto;
+    width: fit-content;
+    overflow-y: hidden;
+    padding: 0 40px;
+}
+
+div.Clbutton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #45A29E;
+    width: 115px;
+    text-align: center;
+    padding: 20px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    transition: .5s;
+}
+
+div.Clbutton:hover {
+    background-color: transparent;
+    color: #66FCF1;
+}
+
+div.Clbutton:hover select {
+    background-color: transparent;
+    color: #66FCF1;
+}
+
+select {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.75rem;
+}
+
+select>option {
+    background-color: #0B0C10;
+    outline: none;
+    border: none;
+    text-align: center!important;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1.5px;
+    color: #66FCF1;
+    /* text-shadow: 2px 2px 2px gray; */
+    font-weight: 900;
+    height: 82px;
+}
+
+ul.options {
+    width: fit-content;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 17px;
+    text-decoration: none;
+    visibility: hidden;
+}
+
+ul.options a {
+    text-decoration: none;
+}
+
+ul.options li {
+    color: #66FCF1;
+    transition: 0.5s;
+    text-align: center;
+    font-size: 1.1em;
+    background: transparent;
+    height: 31px;
+    padding: 4px 0;
+}
+
+ul.options li:hover {
+    background-color: #66FCF1;
+    color: black;
+}
+
+div.main-headings {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 2000px;
+}
+
+div.main-headings h2,
+div.main-headings h3 {
+    width: fit-content;
+    margin: 0px auto;
+    color: rgb(100, 252, 242);
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+}
+
+div.main-headings h2 {
+    font-size: 50px;
+}
+
+h2.last-one {
+    font-size: 81px;
+    letter-spacing: 22px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiplication</title>
+    <link rel="stylesheet" href="multiplication.css">
+    <!-- <script src="multiplication.js"></script> -->
+</head>
+
+<body style="overflow-y: hidden;" id="main" class="body">
+    <div class="wrapper" id="wrapper">
+        <script>
+            var nums = [];
+            for (var i = 0; i < 10; i++) {
+                var s = Math.floor(Math.random() * 100) + 1;
+                nums.push(s);
+                document.write('<div id="' + i + '" class="numbers">' + nums[i] + "</div>");
+            }
+            var correctAns = [];
+            for (var i = 0; i < nums.length; i++) {
+                if (i === 0) {
+                    correctAns.push(nums[i + i] * nums[(nums.length - 1)]);
+                } else {
+                    correctAns.push(nums[i] * nums[nums.length - i - 1]);
+                }
+            }
+        </script>
+
+    </div>
+    <div class="answers">
+        <input type="text" class="style" id="in1" placeholder="1" onclick="changer('0', '9');timer('timeline');" onblur="getAns('in1');checker('in1', 0, '0', '9');">
+        <input type="text" class="style" id="in2" placeholder="2" onclick="changer('1', '8');" onblur="getAns('in2');checker('in2', 1, '1', '8');">
+        <input type="text" class="style" id="in3" placeholder="3" onclick="changer('2', '7');" onblur="getAns('in3');checker('in3', 2, '2', '7');">
+        <input type="text" class="style" id="in4" placeholder="4" onclick="changer('3', '6');" onblur="getAns('in4');checker('in4', 3, '3', '6');">
+        <input type="text" class="style" id="in5" placeholder="5" onclick="changer('4', '5');" onblur="getAns('in5');checker('in5', 4, '4', '5')">
+        <script>
+            function changer(Id1, Id2) {
+                document.getElementById(Id1).setAttribute("class", "numbers now");
+                document.getElementById(Id2).setAttribute("class", "numbers now");
+            }
+            var ans = [];
+
+            function getAns(theId) {
+                ans.push(document.getElementById(theId).value);
+            }
+            var sahi = 0;
+
+            function checker(theId, index, div1, div2) {
+                if (Number(document.getElementById(theId).value) === correctAns[index]) {
+                    document.getElementById(theId).setAttribute("class", "style correctinp");
+                    document.getElementById(div1).setAttribute("class", "numbers correct");
+                    document.getElementById(div2).setAttribute("class", "numbers correct");
+                    sahi++;
+                } else {
+                    document.getElementById(theId).setAttribute("class", "style incorrectinp");
+                    document.getElementById(div1).setAttribute("class", "numbers incorrect");
+                    document.getElementById(div2).setAttribute("class", "numbers incorrect");
+                }
+            }
+        </script>
+
+    </div>
+    <div id="timeline" class="timeline">
+        <script>
+            function Percentage() {
+                var rst = (sahi / 5) * 100;
+                var rst1 = Math.round(rst);
+                var percentage;
+                // percentage = `<div class="loader"><h1>` + "100" + `%</h1></div>`;
+                if (rst1 >= 100) {
+                    percentage = `<div class="loader"><h1>` + "100" + `%</br>Conqurer</h1></div>`;
+                } else if (rst1 >= 90) {
+                    percentage = `<div class="loader"><h1>` + rst1 + `%</br>Ace</h1></div>`;
+                } else if (rst1 >= 80) {
+                    percentage = `<div class="loader"><h1>` + rst1 + `%</br>Crown</h1></div>`;
+                } else if (rst1 >= 70) {
+                    percentage = `<div class="loader"><h1>` + rst1 + `%</br>Diamond</h1></div>`;
+                } else if (rst1 >= 60) {
+                    percentage = `<div class="loader"><h1>` + rst1 + `%</br>Gold</h1></div>`;
+                } else {
+                    percentage = `<div class="red-loader"><h1>` + rst1 + `%</br></h1></div>`;
+                }
+                document.getElementById("main").innerHTML = percentage;
+                document.getElementById("main").setAttribute("class", "body");
+            }
+
+            function timer(theId) {
+                var time = 10;
+                document.getElementById(theId).innerHTML = "<div>" + time + "</div>";
+                setInterval(function() {
+                    time--;
+                    document.getElementById(theId).innerHTML = "<div>" + time + "</div>";
+                    if (time === 1) {
+                        document.getElementById('main').className = "lastmin";
+                        // break;
+                    } else if (time === 0) {
+                        Percentage();
+                    }
+                }, 60000)
+            }
+        </script>
+    </div>
+    <button onclick="Percentage();">SUBMIT</button>
+    <!-- <script src="multiplication.js"></script> -->
+
+</body>
+
+</html>

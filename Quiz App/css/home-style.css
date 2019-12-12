@@ -1,0 +1,126 @@
+body {
+    background-color: lightgray;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    width: 100%;
+    /* position: fixed; */
+    /* z-index: 300; */
+    background-color: white!important;
+    border-bottom: 6px solid rgb(121, 10, 10);
+    box-shadow: 1px 1px 11px rgba(128, 128, 128, 0.5);
+}
+
+nav h1 {
+    display: inline;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: rgb(121, 10, 10);
+    text-shadow: 1px 1px 11px rgba(128, 128, 128, 0.5);
+}
+
+div.collapse {
+    justify-content: flex-end;
+}
+
+.navbar-nav>li>a {
+    color: rgb(121, 10, 10)!important;
+    font-weight: 600;
+}
+
+
+/* slider */
+
+.jumb {
+    padding-top: 20px;
+}
+
+div.width {
+    width: 100%;
+    margin: 0px;
+}
+
+.slider {
+    padding: 0px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.jumbotron {
+    background-color: rgba(121, 10, 10, 1);
+    border-top-left-radius: 40px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    border-left: 8px outset white;
+    padding: 30px 0px;
+    box-shadow: 4px 9px 26px rgba(121, 10, 10, 1);
+    margin-bottom: 26px;
+}
+
+.jumbotron h1 {
+    border-radius: 50%;
+    background-color: white;
+    width: 55px;
+    text-align: center;
+    border: 4px outset white;
+}
+
+a.btn {
+    width: 100%;
+    background-color: rgba(121, 10, 10, 1)!important;
+    border: 0px;
+    margin-top: 10px;
+    height: 160px;
+}
+
+.slider-div {
+    border-bottom: 6px solid rgb(121, 10, 10);
+    padding-bottom: 14px;
+}
+
+.adm-policy {
+    /* box-shadow: 4px 9px 34px; */
+}
+
+.admission {
+    padding-top: 14px;
+}
+
+h2.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 300;
+    color: rgb(121, 10, 10);
+    font-weight: 900;
+    \ text-align: center;
+}
+
+.admission h2 {
+    background-color: rgb(121, 10, 10);
+    color: white;
+    font-size: 200%;
+    padding: 8px 0px;
+    text-align: center;
+    margin-bottom: 0px;
+    width: 80%;
+    margin-left: 84px;
+    box-shadow: 4px 9px 34px;
+}
+
+.admission h2~p {
+    font-size: 130%;
+    line-height: 150%;
+    background-color: white;
+    padding: 12px 12px;
+    color: black;
+    border-right: 6px solid rgb(121, 10, 10);
+    text-align: justify;
+    box-shadow: 4px 9px 34px;
+}
+
+.row {
+    width: 100%;
+}

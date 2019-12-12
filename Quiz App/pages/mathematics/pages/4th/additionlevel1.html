@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 370px;
+            display: flex;
+            justify-content: center;
+            place-items: flex-end;
+            background-color: #031321;
+        }
+        
+        input {
+            display: block;
+            text-align: center;
+            padding: 10px 0px;
+            font-size: 200%;
+            outline: none;
+            border: 2px solid rgb(56, 138, 219);
+            background-color: #031321;
+            color: white;
+            box-shadow: inset 0px 0px 10px rgb(56, 138, 219);
+            letter-spacing: 3px;
+        }
+        
+        input:nth-child(2) {
+            margin-bottom: 4px;
+        }
+        
+        input#sum {
+            border: 2px solid #c714df;
+            box-shadow: inset 0px 0px 10px #c714df;
+        }
+        
+        #sum:active {}
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="first-num">
+        <input type="text" id="second-num">
+        <input type="text" id="sum" onfocus="stYles();" onblur="result();" dir="auto">
+    </div>
+    <script>
+        var twoNums = [];
+        var array = [];
+        var num;
+        var newNum;
+        var number;
+
+        function genRand(min, max) {
+            for (var m = 0; m <= 1; m++) {
+                for (var i = 1; i <= 6; i++) {
+                    var range = max - min + 1;
+                    array.push(Math.floor(Math.random() * range) + min);
+                    num = array.toString();
+                    newNum = num.replace(/,/g, "");
+                    // number = Number(newNum);
+                }
+                twoNums.push(newNum);
+            }
+        }
+        genRand(1, 9);
+        var num1 = Number(twoNums[0]);
+        var num2x = twoNums[1].slice(6, twoNums[1].length);
+        var num2 = Number(num2x);
+        if (num1 > num2) {
+            document.getElementById('first-num').value = num1;
+            document.getElementById('second-num').value = num2;
+        } else {
+            document.getElementById('first-num').value = num2;
+            document.getElementById('second-num').value = num1;
+
+        }
+
+        function result() {
+            var sum = parseInt(document.getElementById('sum').value);
+            var addBoth = num1 + num2;
+            if (addBoth === sum) {
+                document.getElementById('sum').style.border = "2px solid green";
+                document.getElementById('sum').style.backgroundColor = "rgba(0, 255, 0, .08)";
+                document.getElementById('sum').style.boxShadow = "inset 0px 0px 6px green";
+            } else {
+                document.getElementById('sum').style.border = " 2px solid red";
+                document.getElementById('sum').style.backgroundColor = "rgba(255, 0, 0, .08)";
+                document.getElementById('sum').style.boxShadow = "inset 0px 0px 6px red";
+            }
+
+        }
+
+        function stYles() {
+            document.getElementById('first-num').style.transition = ".5s";
+            document.getElementById('second-num').style.transition = ".5s";
+            document.getElementById('first-num').style.border = "2px solid #031321";
+            document.getElementById('first-num').style.color = "rgb(56, 138, 219)";
+            document.getElementById('first-num').style.boxShadow = "none";
+            document.getElementById('second-num').style.border = "2px solid #031321";
+            document.getElementById('second-num').style.color = "rgb(56, 138, 219)";
+            document.getElementById('second-num').style.boxShadow = "none";
+            document.getElementById('sum').style.transition = ".5s";
+        }
+    </script>
+</body>
+
+</html>
